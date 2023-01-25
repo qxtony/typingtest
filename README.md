@@ -17,4 +17,5 @@ To start the program, enter the following:
 ```sh
 python -m typingtest
 ```
-[video](https://user-images.githubusercontent.com/71513188/214591892-d583cd78-c483-4563-9082-9c440ef2d47f.webm)
+
+[video.webm](https://user-images.githubusercontent.com/71513188/214592267-9394982a-7eca-4028-adac-5f6b32dd1f18.webm)
