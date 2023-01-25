@@ -110,15 +110,20 @@ class Text:
                 text.fill(color, special_flags=pygame.BLEND_RGB_MAX)
                 index = list(self.texts.keys()).index(text) + 1
 
+                if index > len(self.texts) - 1:
+                    return
+
                 self.current_coordinates = list(self.texts.values())[index][0]
                 break
 
             counter += 1
 
     def get_typing_accuracy(self, count_typing_symbols: int) -> float:
-        return round(
+        accuracy = round(
             100 - (self.wrongly_typed / (count_typing_symbols + 1)) * 100, 2
         )
+
+        return min(accuracy, 100)
 
     @property
     def get_current_text_coordinates(self) -> tuple[int, int]:

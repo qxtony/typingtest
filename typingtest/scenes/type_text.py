@@ -1,4 +1,5 @@
 from typing import Final
+import string
 
 import pygame
 
@@ -7,7 +8,10 @@ from typingtest.gui import Cursor, Text, Timer, get_words_per_minute
 from typingtest.resources import statistic
 from typingtest.scenes.base import Scene
 
-RUSSIAN_LETTERS: Final[list] = list("абвгдеёжзийклмнопрстуфхцчшщъыьэюя ")
+RUSSIAN_LETTERS: Final[list] = (
+    list("абвгдеёжзийклмнопрстуфхцчшщъыьэюя ")
+    + list(string.punctuation)
+)
 
 
 class TypeText(Scene):
