@@ -1,7 +1,7 @@
 import pygame
 
-from typingtest.config import WIDTH, HEIGHT, TITLE, FPS
-from typingtest.scenes import scenes, switch_scenes
+from typingtest.config import FPS, HEIGHT, TITLE, WIDTH
+from typingtest.scenes import get_start_scene, switch_scenes
 
 
 class TypingTest:
@@ -11,7 +11,8 @@ class TypingTest:
         self.clock = pygame.time.Clock()
         pygame.display.set_caption(TITLE)
 
-        self.current_scene = scenes[0]
+        self.scene = get_start_scene()
+        self.current_scene = self.scene()
         self.start_game()
 
     def start_game(self) -> None:
@@ -26,7 +27,8 @@ class TypingTest:
                     switch = self.current_scene.on_key_press(event.key)
 
                     if switch:
-                        self.current_scene = switch_scenes(self.current_scene)
+                        self.scene = switch_scenes(self.scene)
+                        self.current_scene = self.scene()
 
             self.display_update()
             self.clock.tick(FPS)

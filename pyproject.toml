@@ -16,7 +16,7 @@ max-line-length = 79
 
 [tool.poetry]
 name = "typingtest"
-description = "TypingTest game"
+description = "TypingTest is a simple typing test application."
 version = "1.0.0"
 authors = ["qxtony"]
 repository = "https://github.com/qxtony/typingtest"
